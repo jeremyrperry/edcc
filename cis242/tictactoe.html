@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/tr/XHTML1/dtd/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr"><head>
+<title>CIS 242 - tic-tac-toe</title>
+
+<meta name="author" content="your name" />
+   <meta name="keywords" content="class example, explanation of the examples included, QUARTER, Edmonds Community College" />
+   <meta name="description" content="description" />
+   <meta http-equiv="content-type" content="text/html, UTF-8" />
+   <meta name="robots" content="none" />
+<script type="text/javascript">	
+
+
+var imgStorage = new Array(9);
+	for (var i = 0; i < imgStorage.length; i++)
+	{
+		imgStorage[i] = "";
+	}
+	
+
+//Keeps track of the wins by X and O.
+var winTracker = new Array(2);
+winTracker[0] = 0;
+winTracker[1] = 0;
+
+//Boolean for toggling between two and one player mode
+var playingComputer = new Array("nada");
+
+//Function for changing to one player mode
+function onePlayer()
+{
+	alert("You are entering one player mode.  You will be X and the computer will be O.  You can return to two player mode at any time by clicking the Reset Game button")
+	playingComputer[0] = "yep";
+	winTracker[0] = 0;
+	winTracker[1] = 0;
+	document.forms[0].xWins.value = "0";
+	document.forms[0].oWins.value = "0";
+	document.forms[0].txtTurn.value = "X's Turn";
+	restoreSquares();
+}
+
+
+function changeToXorY(imgToChange)
+{
+	if (playingComputer[0] == "nada")
+	{
+		if (imgStorage[imgToChange] == "")
+		{
+			if (document.forms[0].txtTurn.value == "X's Turn")
+			{
+				document.images[imgToChange].src = "x.jpg";
+				imgStorage[imgToChange] = "x"
+				document.forms[0].txtTurn.value = "O's Turn";
+			}
+			else
+			{
+				document.images[imgToChange].src = "o.jpg";
+				imgStorage[imgToChange] = "o"
+				document.forms[0].txtTurn.value = "X's Turn";
+			}
+			evaluateForWin();
+		}
+		else
+		{	
+			alert("This square is already taken");
+		}
+	}
+	else
+	{
+		if (imgStorage[imgToChange] == "")
+		{
+			document.images[imgToChange].src = "x.jpg";
+			imgStorage[imgToChange] = "x"
+			document.forms[0].txtTurn.value = "O's Turn";
+			evaluateForWin();
+		}
+		else
+		{
+			alert("This square is already taken.")
+		}
+	}
+}
+
+function computersTurn()
+{
+		var computerPicksNumber = (Math.floor(Math.random() * 9));
+		while (imgStorage[computerPicksNumber] !="")
+		{
+			computerPicksNumber = (Math.floor(Math.random() * 9))
+		}
+		imgStorage[computerPicksNumber] = "o";
+		document.images[computerPicksNumber].src = "o.jpg";
+		document.forms[0].txtTurn.value = "X's Turn";
+		evaluateForWin();	
+}
+
+//Evaluates for a win by X or O on each turn
+function evaluateForWin()
+{
+	// The function will first evalulate for a win by X
+	if ((imgStorage[0] == "x") && (imgStorage[1] == "x") && (imgStorage[2] == "x"))
+	{	
+		xWins();
+	}
+	
+	if ((imgStorage[3] == "x") && (imgStorage[4] == "x") && (imgStorage[5] == "x"))
+	{	
+		xWins();
+	}
+	
+	if ((imgStorage[6] == "x") && (imgStorage[7] == "x") && (imgStorage[8] == "x"))
+	{	
+		xWins();
+	}
+	
+	if ((imgStorage[0] == "x") && (imgStorage[3] == "x") && (imgStorage[6] == "x"))
+	{	
+		xWins();
+	}
+	
+	if ((imgStorage[1] == "x") && (imgStorage[4] == "x") && (imgStorage[7] == "x"))
+	{	
+		xWins();
+	}
+	
+	if ((imgStorage[2] == "x") && (imgStorage[5] == "x") && (imgStorage[8] == "x"))
+	{	
+		xWins();
+	}
+	
+	if ((imgStorage[0] == "x") && (imgStorage[4] == "x") && (imgStorage[8] == "x"))
+	{	
+		xWins();
+	}
+	
+	if ((imgStorage[2] == "x") && (imgStorage[4] == "x") && (imgStorage[6] == "x"))
+	{	
+		xWins();
+	}
+	
+	//Now it will evaluate for a win by O
+		if ((imgStorage[0] == "o") && (imgStorage[1] == "o") && (imgStorage[2] == "o"))
+	{	
+		oWins();
+	}
+	
+	if ((imgStorage[3] == "o") && (imgStorage[4] == "o") && (imgStorage[5] == "o"))
+	{	
+		oWins();
+	}
+	
+	if ((imgStorage[6] == "o") && (imgStorage[7] == "o") && (imgStorage[8] == "o"))
+	{	
+		oWins();
+	}
+	
+	if ((imgStorage[0] == "o") && (imgStorage[3] == "o") && (imgStorage[6] == "o"))
+	{	
+		oWins();
+	}
+	
+	if ((imgStorage[1] == "o") && (imgStorage[4] == "o") && (imgStorage[7] == "o"))
+	{	
+		oWins();
+	}
+	
+	if ((imgStorage[2] == "o") && (imgStorage[5] == "o") && (imgStorage[8] == "o"))
+	{	
+		oWins();
+	}
+	
+	if ((imgStorage[0] == "y") && (imgStorage[4] == "y") && (imgStorage[8] == "y"))
+	{	
+		oWins();
+	}
+	
+	if ((imgStorage[2] == "y") && (imgStorage[4] == "y") && (imgStorage[6] == "y"))
+	{	
+		oWins();
+	}
+	
+	if ((playingComputer[0] == "yep") && (document.forms[0].txtTurn.value == "O's Turn"))
+	{
+		computersTurn();
+	}
+}	
+
+//If X wins, the win is recorded and the squares are restored to the blank state.
+function xWins()
+{
+	if (playingComputer[0] == "nada")
+	{
+		alert("X wins!  Click ok to keep playing.");
+	}
+	else
+	{
+		alert("You win!  Click ok to keep playing.");
+	}
+	winTracker[0] +=1;
+	document.forms[0].xWins.value = winTracker[0];
+	restoreSquares();
+	if ((playingComputer[0] == "yep") && (document.forms[0].txtTurn.value = "O's Turn"))
+	{
+			alert("It's the computer's turn now");
+	}
+}
+
+//If O wins, the win is recorded and the squares are restored to the blank state.
+function oWins()
+{
+	if (playingComputer[0] == "nada")
+	{
+		alert("O wins!  Click ok to keep playing.");
+	}
+	else
+	{
+		alert("The computer wins!  Click ok to keep playing.");
+	}
+	winTracker[1] +=1;
+	document.forms[0].oWins.value = winTracker[1];
+	restoreSquares();
+	if ((playingComputer[0] == "yep") && (document.forms[0].txtTurn.value = "O's Turn"))
+	{
+		alert("It's the computer's turn now");
+	}
+}
+
+//Allows the user to reset all the values at any given point
+function resetGame()
+{
+	alert("This will erase all stats and reset the game to two player mode.  Click ok to proceed.");
+	winTracker[0] = 0;
+	winTracker[1] = 0;
+	document.forms[0].xWins.value = "0";
+	document.forms[0].oWins.value = "0";
+	document.forms[0].txtTurn.value = "X's Turn";
+	restoreSquares();
+	playingComputer[0] = "nada";
+}
+
+//Restores the squares and the related array to its default state
+function restoreSquares()
+{
+	for (var i = 0; i < 9; i++)
+	{
+		document.images[i].src = "blank.jpg";
+	}
+	
+	for (var i = 0; i < imgStorage.length; i++)
+	{
+		imgStorage[i] = "";
+	}
+}
+	
+</script>
+</head>
+
+<body>
+
+<form action="" name="frmOptions" id="frmOptions">
+<h1 align="center">Tic-Tac-Toe</h1>
+<table border="1" cellpadding="2" align="center" bordercolor="#000000">
+ <tr>
+  <td><img src="blank.jpg" width="100" height="100" alt="blank" name="0" border="0" onclick="return changeToXorY(0);" /></td>
+  <td><img src="blank.jpg" width="100" height="100" alt="blank" name="1" onclick="return changeToXorY(1);" /></td>
+  <td><img src="blank.jpg" width="100" height="100" alt="blank" name="2" onclick="return changeToXorY(2);" /></td>
+ </tr>
+ <tr>
+  <td><img src="blank.jpg" width="100" height="100" alt="blank" name="3" onclick="return changeToXorY(3);" /></td>
+  <td><img src="blank.jpg" width="100" height="100" alt="blank" name="4" onclick="return changeToXorY(4);" /></td>
+  <td><img src="blank.jpg" width="100" height="100" alt="blank" name="5" onclick="return changeToXorY(5)" /></td>
+ </tr>
+ <tr>
+  <td><img src="blank.jpg" width="100" height="100" alt="blank" name="6" onclick="return changeToXorY(6);" /></td>
+  <td><img src="blank.jpg" width="100" height="100" alt="blank" name="7" onclick="return changeToXorY(7);" /></td>
+  <td><img src="blank.jpg" width="100" height="100" alt="blank" name="8" onclick="return changeToXorY(8);" /></td>
+ </tr>
+</table>
+<table border="0" cellpadding="2" align="center" bordercolor="#000000" width="400">
+ <tr>
+  <td>
+  <input type="button" name="btnOnePlayer" id="btnOnePlayer" value="One Player" onclick="return onePlayer();" />
+  </td>
+ <td valign="middle">
+  <input type="button" name="btnRestart" id="btnRestart" value="Restart Game" onclick="return resetGame();" /><br />
+ </td>
+  <td><input type="text" name="txtTurn" readonly="readonly" id="txtTurn" value="X's Turn" size="5" /></td>
+  <td>
+  Previous Wins:<br />
+  X wins:<input type="text" readonly="readonly" name="xWins" id="xWins" value="0" size="1" /><br />
+  O wins:<input type="text" readonly="readonly" name="oWins" id="oWins" value="0" size="1" />
+  </td>
+ </tr>
+
+</table>
+</form>
+
+<div style="text-align:center">
+<p><a href="../cis242.php">Back to my JavaScript class page</a><p>
+</div
+></body>
+</html>

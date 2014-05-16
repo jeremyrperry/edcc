@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<resume>
+	<name>Jeremy Perry</name>
+	<ContactInformation>
+		<address>16619 Larch Way Apt G-301</address>
+		<city>Lynnwood</city>
+		<state>WA</state>
+		<zip>98037</zip>
+		<PhoneNumber>425-210-3586</PhoneNumber>
+		<e-mail>jeremyrperry@gmail.com</e-mail>
+	</ContactInformation>
+	<objective>To obtain employment where I can utilize my educational and 	occupational experience in a way that is enriching to both my employer and 	myself.</objective>
+	<education>
+		<school>
+			<name>Edmonds Community College</name>
+			<DatesAttended>April 2010 to Present</DatesAttended>
+			<degree>Web Application Developer Degree in progress</degree>
+		</school>
+		<school>
+			<name>Western Washington University</name>
+			<DatesAttended>Sept 2007 to Dec 2009</DatesAttended>
+			<degree>English - Creative Writing Emphasis with a minor in Journalism</degree>
+		</school>
+		<school>
+			<name>Everett Community College</name>
+			<DatesAttended>Sept to Dec 1999 and Sept 2006 to June 2007</DatesAttended>
+			<degree>Associate in Arts</degree>
+		</school>
+		<school>
+			<name>Central Texas College</name>
+			<DatesAttended>Dec 2004 to July 2006</DatesAttended>
+			<degree>General Studies</degree>
+		</school>
+		<school>
+			<name>Olympic College</name>
+			<DatesAttended>Sept to Dec 2003</DatesAttended>
+			<degree>General Studies</degree>
+		</school>
+		<school>
+			<name>Bellevue College</name>
+			<DatesAttended>Apr to June 2000</DatesAttended>
+			<degree>General Studies</degree>
+		</school>
+	</education>
+	<employment>
+		<employer>
+			<name>US Census Bureau</name>
+			<location>Seattle, WA</location>
+			<PositionHeld>Census Enumerator</PositionHeld>
+			<dates>Mar to Apr 2010</dates>
+			<responsibilities>Conduct census count for adult care facilities</responsibilities>
+		</employer>
+		<employer>
+			<name>John Kurtz Painting</name>
+			<location>Friday Harbor, WA</location>
+			<PositionHeld>Painter</PositionHeld>
+			<dates>June to Sept 2008</dates>
+			<responsibilities>Interior and exterior painting</responsibilities>
+		</employer>
+		<employer>
+			<name>Macy's</name>
+			<location>Bellingham, WA</location>
+			<PositionHeld>Sales Associate</PositionHeld>
+			<dates>Oct 2007 to Mar 2008</dates>
+			<responsibilities>Sell merchandise and provide customer service</responsibilities>
+		</employer>
+		<employer>
+			<name>College Pro Painters</name>
+			<location>Seattle, WA</location>
+			<PositionHeld>Franchise Manager</PositionHeld>
+			<dates>Mar to Sept 2007</dates>
+			<responsibilities>Operate and manage a College Pro Painters business franchise</responsibilities>
+		</employer>
+		<employer>
+			<name>Car Toys</name>
+			<location>Everett, WA</location>
+			<PositionHeld>Installer</PositionHeld>
+			<dates>Oct to Dec 2006</dates>
+			<responsibilities>Install, troubleshoot and repair car stereo and electronic equipment</responsibilities>
+		</employer>
+		<employer>
+			<name>United States Navy</name>
+			<location>Various Locations</location>
+			<PositionHeld>Electronics Technician</PositionHeld>
+			<dates>Aug 2000 to Aug 2006</dates>
+			<responsibilities>Maintain, troubleshoot and repair various shipboard electronic equipment in addition to other military duties</responsibilities>
+		</employer>
+	</employment>
+	<references>References and Letters of Recommendation available upon request</references>
+</resume>
+		

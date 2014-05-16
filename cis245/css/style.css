@@ -1,0 +1,196 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*
+Please be aware that this document contains elements not supported by CSS2 and will not validate on W3C.  They are noted as they come up.
+*/
+
+/*The standard declarations for the body*/
+body
+{
+	background-color: black;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*This is the container for the main section of the document.*/
+#main
+{
+width:900px;
+margin-left: auto;
+margin-right: auto;
+}
+
+/*A class for the text justify was created because several different sections use this characteristic.  It will allow for the style to be changed at all of the locations with just modifying this section.*/
+.justify-text
+{
+	text-align: justify;
+}
+
+/*This class sets a custom orange color used in several different locations in the document*/
+.text-color1
+{
+	color: rgb(239, 121, 47);
+}
+
+/*The attributes for the header.  The included webkits will not validate properly with the W3C CSS validator because it is not a recognized CSS2 property.  I used the code generator at http://gradients.glrzad.com and it does properly render the color gradients.  IE 8 and below does not support this feature, and has been given a seperate stylesheet to give the header a solid color.  The header is intentionally made bigger than necessary to allow for the curvature of div element below the header (called #below-header).*/
+#header
+{
+height: 300px;
+postion: absolute;
+background-image: linear-gradient(bottom, rgb(188,186,56) 25%, rgb(150,155,55) 50%, rgb(129,140,54) 75%);
+background-image: -o-linear-gradient(bottom, rgb(188,186,56) 25%, rgb(150,155,55) 50%, rgb(129,140,54) 75%);
+background-image: -moz-linear-gradient(bottom, rgb(188,186,56) 25%, rgb(150,155,55) 50%, rgb(129,140,54) 75%);
+background-image: -webkit-linear-gradient(bottom, rgb(188,186,56) 25%, rgb(150,155,55) 50%, rgb(129,140,54) 75%);
+background-image: -ms-linear-gradient(bottom, rgb(188,186,56) 25%, rgb(150,155,55) 50%, rgb(129,140,54) 75%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.25, rgb(188,186,56)),
+	color-stop(0.5, rgb(150,155,55)),
+	color-stop(0.75, rgb(129,140,54))
+);
+}
+
+/*Provides an offset and font settings for the header section*/
+#header-content
+{
+	font-size: 10px;
+	padding-top: 30px;
+}
+
+/*Provides the parameters for the issue information (seen on the issue sample page).*/
+.head-left
+{
+	float: left;
+	margin-left: 20px;
+}
+
+/*Provides the parameters for the issue number (seen on the issue sample page).*/
+.issue-no
+{
+	color: white;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+/*Provides the parameters for the section containing the slug line for the document (Monthly Journal of...).*/
+.head-center
+{
+margin-left: 430px;
+margin-top: 10px;
+width: 50px;
+}
+
+/*Provides the parameters for the section containing the Tech Time header logo.*/
+.head-right
+{
+	margin-top: -80px;
+	float: right;
+	margin-right: 75px;
+}
+
+/*Provides the parameters for the section below the header.  This element is curved using border radius feature, and offseted into the header element to create the curvature look in the Word Document template.  Even with Curvy Corners installed, it cannot get IE 8 and below to perform the curve because each section of the corners has a different value (it confuses IE, which is not a hard thing to do).  No fix was needed since IE 8 and below gracefully degrades to a straight line.  The border radius properties will not validate with W3C because they are a CSS3 property.*/
+#below-header
+{
+background-color: rgb(31, 41, 49);
+margin-top: -150px;
+border-top-left-radius: 600px 125px;
+-moz-border-radius-topleft: 600px 125px;
+-webkit-border-top-left-radius: 600px 125px;
+border-top-right-radius: 300px 50px;
+-moz-border-radius-topright: 300px 50px;
+-webkit-border-top-right-radius: 300px 50px;
+color: white;
+position: relative;
+}
+
+/*The parameters for the side text.  It has an intentional padding offset to keep any text from overlapping with the header due to the curvature.*/
+
+#left-column
+{
+	width: 225px;
+	padding-top: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+	float: left;
+}
+
+/*The parameters for the right text area within the #below_header.  It houses the information above the main content, as well as the main content.*/
+
+#right-column
+{
+	margin-left: 250px;
+}
+
+/*The parameters for the image below the header.  Without this margin setting, the picture would overlap with the header because of the curvature.*/
+.img-rounded
+{
+	margin-top: 25px;
+	
+}
+
+/*The parameters for the hyperlinks that appear to the right of the image.*/
+#right-links
+{
+	float: right;
+	margin-top: 75px;
+	margin-right: 50px;
+	text-align: right;
+}
+
+/*Provides for the hyperlinks within #right-links to be customized a little bit.*/
+#right-links a
+{
+	color: white;
+	text-decoration: none;
+}
+
+/*Adjusts the margin below the #right-links heading.*/
+#right-links h2
+{
+	margin-bottom: 5px;
+}
+
+/*This div class is used to live each hyperlink line in #right-links a custom bottom margin.*/
+#right-links .links
+{
+	margin-bottom: 5px;
+}
+
+/*The parameters for the overall content region, namely a shift back to traditional print color*/
+#content-region
+{
+	background-color: white;
+	color: black;
+	margin-left: 15px;
+	padding: 25px;
+	height: 100%;
+}
+
+/*Gives a custom color for the heading within #content-region to match the color styling on the Word Doc template*/
+#content-region h2
+{
+	color: rgb(142, 161, 56);
+}
+
+/*Gives the first content column the necessary settings to appear on the page properly.*/
+#content-region .column1
+{
+	float: left;
+	width: 275px;
+	padding-bottom: 20px;
+}
+
+/*Gives the second content column the necessary settings to appear on the page properly.*/
+#content-region .column2
+{
+	width: 275px;
+	margin-left: 300px;
+	margin-top: 35px;
+	padding-bottom: 20px;
+}

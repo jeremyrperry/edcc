@@ -1,0 +1,14 @@
+#right-links a
+{
+	display: block;
+	height: 20px;
+	background-color: rgb(142, 161, 56);
+}
+
+
+#content-region a
+{
+	display: block;
+	height: 20px;
+	background-color: rgb(142, 161, 56);
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+<book>
+    <title>Test Book 1</title>
+	<directory>test_book1</directory>
+	<online_directory>node/13</online_directory>
+	<image>apple-pie.jpg</image>
+	<author>Yours Truly</author>
+</book>
+<book>
+    <title>Test Book 2</title>
+	<directory>test_book2</directory>
+	<online_directory>node/14</online_directory>
+	<image>by-the-beach.jpg</image>
+	<author>No One in Particular</author>
+</book>
+<book>
+    <title>Test Book 3</title>
+	<directory>test_book3</directory>
+	<online_directory>node/15</online_directory>
+	<image>beach-at-pololu.jpg</image>
+	<author>The Boogie Man</author>
+</book>
+</books>

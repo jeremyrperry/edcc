@@ -1,0 +1,159 @@
+body{
+	font-family: "Trebuchet MS", Verdana, Arial;
+	font-size: 10pt;
+	color: #5C4E23;
+	margin-top:0;
+	background-image:url(images/beigepattern.jpg);
+}
+
+img {
+	border: 0;
+}
+ td {
+ 	margin: 10px;
+	font-size: 10pt;
+	color: #5b4d22;
+	font-family: "Trebuchet MS", Verdana, Arial;
+ }
+ 
+ h3{
+	font-family: "Trebuchet MS", Verdana, Arial;
+	margin: 10px;
+	text-align: left;
+	font-size: 12pt;
+	color: #5b4d22;
+	font-weight: bolder;
+
+ }
+ 
+   a {
+	color: #5b4d22;
+	text-decoration: none;
+	font-weight: bolder;
+	font-size: 10pt;
+	font-family: "Trebuchet MS", Verdana, Arial;
+ }
+ 
+    a:hover {
+	color: #5b4d22;
+	text-decoration: underline;
+	font-weight: bolder;
+	font-size: 10pt;
+	font-family: "Trebuchet MS", Verdana, Arial;
+ }
+
+  a.navTop {
+ 	margin: 10px;
+	font-size: 10pt;
+	color: #5b4d22;
+	font-family: "Trebuchet MS", Verdana, Arial;
+ }
+ 
+#navigation a {
+	color: #5b4d22;
+	line-height:26px;
+	text-decoration: none;
+	display:block;
+	font-family: "Trebuchet MS", Verdana, Arial;
+	font-size: 10pt;
+	text-align: center;
+	font-weight: normal;
+
+	}
+	
+#navigation a:hover {
+	color:#ffffff;
+	background-color: #5b4d22;
+	text-align: center;
+	font-weight: normal;
+	}
+	
+#navigationA a {
+	color: #ffffff;
+	line-height:26px;
+	text-decoration: none;
+	display:block;
+	font-family: "Trebuchet MS", Verdana, Arial;
+	font-size: 10pt;
+	text-align: center;
+	font-weight: normal;
+
+	}
+	
+#navigationA a:hover {
+	color:#5b4d22; /*brown*/
+	background-color: #DFD8C6; /*tan*/
+	text-align: center;
+	font-weight: normal;
+	}
+
+	
+ p {
+	margin: 10px;
+	text-align: left;
+	font-size: 10pt;
+	color: #5b4d22;
+
+ }
+ 
+  p.sign {
+ 	margin: 10px;
+	text-align: right;
+	font-size: 10pt;
+	color: #5b4d22;
+
+ }
+ 
+   p.form {
+ 	margin: 10px;
+	text-align: left;
+	font-size: 10pt;
+	color: #5b4d22;
+	margin-top:3px;
+	margin-bottom:3px;
+	font-weight: bolder;
+
+ }
+ 
+ hr{
+ color: #635733;
+ size: 1;
+ width: 85%;
+ }
+ 
+ 
+ li.content{
+ margin-bottom: 8px; 
+ }
+ 
+ a.footer{
+	color: #5b4d22; 
+	/*text-transform: uppercase;*/
+	font-size: 7pt;
+ }
+ 
+.footer{
+	color: #5b4d22;
+	font-size: 7pt;
+
+ }
+ 
+  a:hover.footer{
+	color: #ffffff; 
+	/*text-transform: uppercase;*/
+	font-size: 7pt;
+	text-decoration: underline;
+ }
+
+#mainPictures 
+{
+    position:relative;
+    height:400px;
+	 width: 270px;
+}
+#mainPictures img 
+{
+    position:absolute;
+    top:10px;
+    left:5px;
+}

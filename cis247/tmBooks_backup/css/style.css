@@ -1,0 +1,149 @@
+body{
+    overflow:hidden;
+	background-color: rgb(176, 180, 155);
+}
+
+.book_block{
+	display: block;
+	margin-bottom: 20px;
+	height: 150px;
+}
+
+#book_titles_header{
+	padding: 10px;
+	width: 450px;
+	background-color: #60654E;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px 10px 0px 0px;
+}
+
+#book_titles{
+	background-color: rgb(225,225,213);
+	padding: 10px;
+	width: 450px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+#book_titles .book_image{
+	width: 220px;
+}
+
+#book_titles img{
+	max-width: 200px;
+	float: left;
+}
+
+#book_titles .book_info{
+	margin-left: 240px;
+}
+
+#book_footer{
+	margin-top: 20px;
+	width: 680px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	height: 50px;
+	padding: 10px;
+	background-color: #60654E;
+	text-align: center;
+}
+
+#book_footer a{
+	display: block;
+	text-decoration: none;
+	height: 30px;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-left: 5px;
+	width: 100px;
+	color: black;
+	background-color: gray;
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+	
+
+#flipbook{
+    //width: 900px;
+    height: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page{
+    width:400px;
+    //height:300px;
+    background-color:white;
+    line-height:20px;
+    font-size:12px;
+	padding: 10px;
+    //text-align:center;
+}
+
+
+#flipbook .page-wrapper{
+    -webkit-perspective:2000px;
+    -moz-perspective:2000px;
+    -ms-perspective:2000px;
+    -o-perspective:2000px;
+    perspective:2000px;
+}
+
+#flipbook .hard{
+	/*
+    background:#ccc !important;
+    color:#333;
+	*/
+	text-align: center;
+	background-color: rgb(225,225,213);
+    -webkit-box-shadow:inset 0 0 5px #666;
+    -moz-box-shadow:inset 0 0 5px #666;
+    -o-box-shadow:inset 0 0 5px #666;
+    -ms-box-shadow:inset 0 0 5px #666;
+    box-shadow:inset 0 0 5px #666;
+    font-weight:bold;
+}
+
+#flipbook .odd{
+    background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
+    background-image:-webkit-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+    background-image:-moz-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+    background-image:-ms-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+    background-image:-o-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+    background-image:linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+    -webkit-box-shadow:inset 0 0 5px #666;
+    -moz-box-shadow:inset 0 0 5px #666;
+    -o-box-shadow:inset 0 0 5px #666;
+    -ms-box-shadow:inset 0 0 5px #666;
+    box-shadow:inset 0 0 5px #666;
+    
+}
+
+#flipbook .even{
+    background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
+    background-image:-webkit-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image:-moz-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image:-ms-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image:-o-linear-gradient(left, #fff 95%, #dadada 100%);
+    background-image:linear-gradient(left, #fff 95%, #dadada 100%);
+    -webkit-box-shadow:inset 0 0 5px #666;
+    -moz-box-shadow:inset 0 0 5px #666;
+    -o-box-shadow:inset 0 0 5px #666;
+    -ms-box-shadow:inset 0 0 5px #666;
+    box-shadow:inset 0 0 5px #666;
+}
+
+#original_content{
+	display: none;
+}
+
+#temp_storage{
+	display: none;
+	width: 900px;
+}

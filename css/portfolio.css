@@ -1,0 +1,121 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body
+{
+    background-color: black;
+    font-family: helvetica;
+    font-size: 14px;
+	margin:0px;
+    padding:0px;
+}
+
+#main
+{
+	margin:0px;
+    padding:5px;
+	height: 100%;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+}
+
+#intro
+{
+	margin:0px;
+    padding:5px;
+	height: 600px;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+}
+
+navigate
+{	margin: 0;
+	padding: 0;
+	z-index: 30}
+
+#navigate li
+{	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	font: bold 14px arial}
+
+#navigate li a
+{	display: block;
+	margin-right:10px;
+	border-radius: 30px;
+	padding: 4px 10px;
+	width: 105px;
+	height: 30px;
+	background: #5970B2;
+	color: #FFF;
+	text-align: center;
+	text-decoration: none}
+
+#navigate li a:hover
+{	background: #49A3FF}
+
+#navigate div
+{	position: absolute;
+	visibility: hidden;
+	border-radius: 30px;
+	margin: 0;
+	padding: 0;
+	background: #EAEBD8;
+	//border: 1px solid #5970B2}
+
+	#navigate div a
+	{	position: relative;
+		display: block;
+		border-radius: 30px;
+		margin: 0;
+		padding: 5px 10px;
+		width: 105px;
+		height: 30px;
+		text-align: left;
+		text-decoration: none;
+		background: #EAEBD8;
+		color: #2875DE;
+		font: 11px arial}
+
+	#navigate div a:hover
+	{	background: #49A3FF;
+		color: #FFF}
+
+#pictureArea
+{	width:100%;
+	height:100%;}
+		
+#picture
+{	float: left;
+	margin-left:20px;
+	margin-top:0px;
+	margin-right:10px;
+	margin-bottom:10px;
+    padding:0px;}
+	
+
+.border {
+border: 1px solid #cccccc;
+float: left;
+margin: 5px;
+padding: 1px;
+}
+.center {
+text-align: center;
+}
+.color {
+display: block;
+height: 130px;
+width: 130px;
+}
+
+.colorname {
+display: block;
+text-align: center;
+padding: 5px 0;
+}

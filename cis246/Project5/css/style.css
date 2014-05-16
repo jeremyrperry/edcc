@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	background-color: #F5F6EA;
+}
+
+#main{
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	height: 100%;
+	background-color: white;
+	padding: 20px;
+}
+
+#main hr{
+	color: #EDEFC8;
+}
+
+.heading{
+	color: #745708;
+}
+
+#calendar_wrapper{
+	display: none;
+	color: #0A6640;
+}
+
+
+
+#calendar_header{
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#calendar_header div{
+	margin-bottom: 5px;
+}
+
+.event{
+	margin-bottom: 5px;
+	
+}

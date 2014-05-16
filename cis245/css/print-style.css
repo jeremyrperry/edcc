@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*Since the main CSS is set to show for all media types, the print css focuses on collapsing unneeded div elements and resizing others.*/
+
+
+#header
+{
+height: 150px;
+postion: absolute;
+
+}
+
+
+.head-left
+{
+	display:none;
+}
+
+
+
+
+.head-center
+{
+display: none;
+}
+
+
+
+#below-header
+{
+background-color: white;
+margin-top: 0px;
+
+}
+
+
+#left-column
+{
+	display:none;
+}
+
+
+
+#right-column
+{
+	margin-left: 0px;
+}
+
+
+.img-rounded
+{
+	display:none;
+	
+}
+
+#right-links
+{
+	display:none;
+}
+
+
+#content-region .column1
+{
+	float: left;
+	width: 375px;
+	padding-bottom: 20px;
+}
+
+
+#content-region .column2
+{
+	width: 375px;
+	margin-left: 50%;
+}

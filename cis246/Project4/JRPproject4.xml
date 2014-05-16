@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<calendar>
+	<title>2007-08 Academic Calendar for Edmonds Community College</title>
+	<quarter id="Fall">Fall Quarter 2007</quarter>
+	<month id="September">
+		<day id="24">
+			<event>Fall quarter classes begin</event>
+		</day>
+		<day id="29">
+			<event>Last day for 100% refund (except self-support)</event>
+		</day>
+	</month>
+	<month id="October">
+		<day id="5">
+			<event>Last day to register or add most classes (except ArtsNow or otherwise noted)</event>
+			<event>Last day to drop a class without transcript entry</event>
+			<event>Graduation application deadline for advisor approval</event>
+		</day>
+		<day id="12">
+			<event>Last day for 50% refund (except self-support classes)</event>
+			<event>Non-instructional day, NO CLASSES</event>
+		</day>
+	</month>
+	<month id="November">
+		<day id="12">
+			<event>Veterans Day holiday, NO CLASSES</event>
+		</day>
+		<day id="13">
+			<event>Last day to withdraw from a class</event>
+			<event>Graduation packets due from advisors</event>
+			<event>Last day to withdraw from a class, add a continuous enrollment class</event>
+			<event>Last day to change from credit to audit or audit to credit</event>
+		</day>
+		<day id="15">
+			<event>Registration for winter quarter begins</event>
+		</day>
+		<day id="21">
+			<event>Non-instructional Day, NO CLASSES</event>
+		</day>
+		<day id="22-23">
+			<event>Thanksgiving holidays, NO CLASSES</event>
+		</day>
+		<day id="24">
+			<event>No Saturday classes</event>
+		</day>
+	</month>
+	<month id="December">
+		<day id="7">
+			<event>Classes end</event>
+		</day>
+		<day id="10-13">
+			<event>Final exams</event>
+		</day>
+		<day id="13">
+			<event>End of quarter</event>
+		</day>
+		<day id="15">
+			<event>No Saturday classes</event>
+		</day>
+		<day id="20">
+			<event>Grades available to students online</event>
+		</day>
+	</month>
+</calendar>
+<!--Project 4 was made under the assumption that it is the exact same assginment as the chapter 2 XML class, so all I did was tighten up my XML from the time to include less tags and enclose the Month and day identifier within their respective tags.  This document is valid XML per the W3c.-->

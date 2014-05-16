@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr">
+
+<head>
+<title>Assignment 2 - Using Form Information</title>
+   <!-- author: Jeremy Perry
+   CIS 243, Spring 2011 -->
+   <meta name="author" content="your name" />
+   <meta name="keywords" content="Assignment 2, access form field values, using form information" />
+   <meta name="description" content="Creating a page based upon your user's specified preferences is important." />
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+   <meta name="robots" content="none" />
+   <script type="text/javascript">
+      /*
+      function chkForm(formInd, numElements)
+      purpose: verify that all required form fields have been completed
+      author: Marti Baker
+      date: March 29, 2011
+      paramenters: formInd as integer; indicates the form to be verified in the forms array
+       numElements as integer; indicates the number of form elements that must be checked
+      */
+      function chkForm(formInd, numElements){
+
+         // create two boolean variables to be used to find out if a choice has been made on the radio buttons
+         var blnRdoBody = false;
+         var blnRdoText = false;
+
+         // checks that there is a value for text and select elements
+         for (var i = 0; i < numElements; i++){
+            if (document.forms[formInd].elements[i].value == ""){
+               document.getElementById(document.forms[formInd].elements[i].name).innerHTML = "Required field";
+               document.forms[formInd].elements[i].focus();
+               return false;
+            }
+            if (document.forms[formInd].elements[i].type == "radio"){
+               if (document.forms[formInd].elements[i].name == "rdoBody"){
+                  for (var j = 0; j < document.forms[formInd].rdoBody.length; j++){
+                     if (document.forms[formInd].rdoBody[j].checked == true){
+                     blnRdoBody = true;
+                  }
+               }
+               }
+               if (document.forms[formInd].elements[i].name == "rdoText"){
+                  for (var j = 0; j < document.forms[formInd].rdoText.length; j++){
+                     if (document.forms[formInd].rdoText[j].checked == true){
+                        blnRdoText = true;
+                     }
+                  }
+               }
+            }
+         }
+
+         if (blnRdoBody == false){
+            document.getElementById("rdoBody").innerHTML = "Required field";
+            return false;
+         }
+
+         if (blnRdoText == false){
+            document.getElementById("rdoText").innerHTML = "Required field";
+            return false;
+         }
+
+         return true;
+      }
+
+      /*
+      function clearError(elementID)
+      purpose: clear the the element error text
+      author: Marti Baker
+      date: March 29, 2011
+      paramenters elementID as string, indicates the id of the display field
+      */
+      function clearError(elementID){
+         document.getElementById(elementID).innerHTML = "";
+
+         return true;
+      }
+
+   </script>
+</head>
+
+<body>
+<div style="background-color: #F1DDD2; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; padding-top: 20px;">
+<h1 style="color: Maroon;">Assignment 2 - Using Form Information</h1>
+<h3 style="color: Maroon;">Demonstrates how to read HTML form elements</h3>
+
+<form method="post" action="jrpResponse.php" onsubmit="return chkForm(0, 13)">
+
+<div id="input">
+
+<table border="0" cellpadding="10">
+   <tr>
+      <td valign="top">Your first name:</td>
+      <td valign="top"><input type="text" name="txtFName" size="25" onchange="return clearError('txtFName');" /></td>
+      <td id="txtFName" valign="top" style="color:red"></td>
+   </tr>
+   <tr>
+      <td valign="top">Your last name:</td>
+      <td valign="top"><input type="text" name="txtLName" size="25" onchange="return clearError('txtLName');" /></td>
+      <td id="txtLName" valign="top" style="color:red"></td>
+   </tr>
+   <tr>
+      <td valign="top">Enter the content that you would <br />like to have displayed on your page:</td>
+      <td valign="top">
+            <textarea cols="40" rows="8" name="txtContent" onchange="return clearError('txtContent');"></textarea>
+      </td>
+      <td id="txtContent" valign="top" style="color:red"></td>
+   </tr>
+   <tr>
+      <td valign="top">Text Alignment:</td>
+      <td>
+         <select name="sltAlign" size="3" onclick="return clearError('sltAlign');">
+            <option value="left"> Left </option>
+            <option value="center"> Center </option>
+       ��    <option value="right"> Right </option>
+         </select>
+      </td>
+      <td id="sltAlign" valign="top" style="color:red"></td>
+   </tr>
+   <tr>
+      <td valign="top">Body Color:</td>
+      <td colspan="2">
+         <input type="radio" name="rdoBody" value="white" onclick="return clearError('rdoBody');" /> White<br />
+         <input type="radio" name="rdoBody" value="black" onclick="return clearError('rdoBody');" /> Black<br />
+         <input type="radio" name="rdoBody" value="#4E9258" onclick="return clearError('rdoBody');" /> Forest Green<br />
+         <input type="radio" name="rdoBody" value="#7E3517" onclick="return clearError('rdoBody');" /> Sienna<br />
+      </td>
+      <td id="rdoBody" valign="top" style="color:red"></td>
+   </tr>
+   <tr>
+      <td valign="top">
+         Text Color:
+      </td>
+      <td valign="top">
+         <input type="radio" name="rdoText" value="white" onclick="return clearError('rdoText');" /> White<br />
+         <input type="radio" name="rdoText" value="black" onclick="return clearError('rdoText');" /> Black<br />
+         <input type="radio" name="rdoText" value="#4E9258" onclick="return clearError('rdoText');" /> Forest Green<br />
+         <input type="radio" name="rdoText" value="#7E3517" onclick="return clearError('rdoText');" /> Sienna<br />
+      </td>
+      <td id="rdoText" valign="top" style="color:red"></td>
+   </tr>
+</table>
+<div style="text-align: center; padding-top: 40px;"><input type="submit" value="Enter the content to be displayed on your page" /></div>
+</form>
+<p><a href="../cis243.php">Back to my PHP class page</a></p>
+</div>
+
+</body>
+
+</html>

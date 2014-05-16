@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr">
+
+
+<head>
+<title>Wholesome Pizza:  Place your order</title>
+<!-- Name:  Jeremy Perry -->
+<!-- Class:  CIS 242 Winter 2011 -->
+<!-- Assignment:  Project 1 -->
+<!-- Date: 01/10/2011 -->
+       <meta name="author" content="Jeremy Perry" />
+       <meta name="keywords" content=", Jeremy Perry, calculator, Javascript, CIS 242, class example, Winter 2011, Edmonds Community College" />
+       <meta name="description" content="Jeremy Perry's CIS 242 JavaScript calculator" />
+       <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+       <meta name="robots" content="none" />
+<link rel="stylesheet" href="CSS/WP_style.css" type="text/css" />
+
+<script type="text/javascript" src="javascript/jquery.js"></script>
+<script type="text/javascript" src="javascript/jquery.validate.js"></script>
+<script type="text/javascript" src="javascript/cookie.js"></script>
+<script type="text/javascript" src="javascript/orderinfo.js"></script>
+</head>
+
+<!--the body onload will check to see if the user has already agreed to the information on the disclosure page.  If not, they will be redirected to the disclosure page.
+The function is located in the orderinfo.js file.  A nice nifty booby trap that ensures my CYA policy.-->
+<body onload="initializePage();">
+
+<table width="100%">
+<colgroup width="33%" />
+<colgroup width="33%" />
+<colgroup width="33%" />
+<tr>
+<td align="left">
+	<img src="pictures/organic.jpg" alt="organic" height="100" width="100" />
+</td>
+<td align="center">
+	<p align="center"><img src="pictures/logo.jpg" alt="logo" /><br />
+	2230 NW Market Street<br />
+	Seattle, WA  98107<br />
+	206-234-5678<br />
+	<a href="mailto:info@wholesomepizza.com">info@wholesomepizza.com</a><br />
+	Hours:  11 AM to 11 PM everyday</p>
+</td>
+<td align="right">
+	<img src="pictures/fairtrade.jpg" alt="fair trade" height="100" width="100" />
+</td>
+</tr>
+</table>
+
+<p align="center"><font size="24"><i>Seattle's Premier Organic Pizza Experience</i></font></p>
+
+<table align="center">
+<tr>
+<td>
+<h3>General Notes:</h3>
+<ul>
+	<li>Turn-around times are approximately 15-20 minutes for dine-in and take-out orders, 30-50 minutes for deliveries.</li>
+	<li>All delivery and take-out orders must be placed before 10:30 PM.</li>
+	<li>All dine-in orders must be placed before 10:15 PM.</li>
+	<li>Orders placed after the cut-off time will be processed when our kitchen opens (10:30 AM) on the next day.</li>
+	<li>Our busiest hours for dine-in customers are Thursday, Friday and Saturday nights from 5 PM to closing.  Seating is first-come first-served at all times.</li>
+	<li>Our delivery zip codes are 98107, 98117, 98103, 98199, 98119, and 98109.  <b>No exceptions!</b></li>
+	<li>All build-your-own pizzas include a complimentary topping.  Additional toppings are $1.00</li>
+	<li>We will be glad to take off, or make a 1 for 1 substitution of, any of our ingredients on our speciality pizzas (discounts not given for subtracted ingredients).  Please use the comment section for this request.</li>
+	<li>You may add any additional toppings to our house specalties for the normal additional topping fee.</li>
+	<li>Vegan cheese and gluten free crust are a $2.00 surcharge each and neither are eligible as a complimentary or 1 for 1 topping. Vegan cheese is automatically included on our vegan specality.</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<form action="verify.html" onsubmit="return reviewOrder();" id="pizza-form">
+<table width="1100" align="center">
+<tr>
+<td>
+
+	
+	<h3>Your Pizza</h3>
+	<table class="orderTable">
+	<tr>
+	<td width="70%">
+		<table>
+		<tr>
+		<td>
+			<p><b>Select your size</b><br />
+			<input type="radio" name="rdoSize" id="rdoSmall" value="Small" onclick="return pizzaSize(10);" />Small - $10 (9", feeds 1-2 people)<br />
+			<input type="radio" name="rdoSize" id="rdoMed" value="Medium" onclick="return pizzaSize(13);" />Medium - $13 (12", feeds 2-3 people)<br />
+			<input type="radio" name="rdoSize" id="rdoLarge" value="Large" onclick="return pizzaSize(16);" />Large - $16 (15", feeds 2-4 people)<br />
+			<input type="radio" name="rdoSize" id="rdoXL" value="Extra Large" onclick="return pizzaSize(19);" />X-Large - $19 (18", feeds 3-6 people)</p>
+	
+			<p><b>Crust Style</b><br />
+			<input type="radio" name="rdoCrust" id="rdoRCrust" value="Regular" onclick="return detPizzaCrust('Regular');" />Regular<br />
+			<input type="radio" name="rdoCrust" id="rdoTcrust" value="Thin" onclick="return detPizzaCrust('Thin');" />Thin<br />
+			<input type="checkbox" name="chkGluten" id="chkGluten" value="Gluten Free" onclick="return changeValue2(2);" />Gluten Free - plus $2.00</p>
+	
+			<p><b>Choose build your own or our house specialities</b><br />
+			<input type="radio" name="rdoStyle" id="rdoCStyle" value="Own" checked="checked" onclick="makeSpecialityInv();" />Build my own<br />
+			<input type="radio" name="rdoStyle" id="rdoHStyle" value="House" onclick="makeSpecialityVis();" />House</p>
+
+			<div id="specialties" style="visibility:hidden">
+			<p><b>House Specalities</b><br />
+			<input type="radio" name="rdoHouse" id="rdoMeatLovers" value="MeatLovers" onclick="return pizzaStyle(2.5);" /><a href="menu.html#meatlovers">Meat Lovers</a> - plus $2.50<br />
+			<input type="radio" name="rdoHouse" id="rdoGreek" value="Greek" onclick="return pizzaStyle(3);" /><a href="menu.html#greek">Greek</a> - plus $3.00<br />
+			<input type="radio" name="rdoHouse" id="rdoSeafood" value="Seafood Special" onclick="return pizzaStyle(3.5);" /><a href="menu.htm#seafoodl">Seafood Special</a> - plus $3.50<br />
+			<input type="radio" name="rdoHouse" id="rdoSupreme" value="Supreme" onclick="return pizzaStyle(3.5);" /><a href="menu.html#supreme">American Supreme</a> - plus $3.50<br />
+			<input type="radio" name="rdoHouse" id="rdoVegetarian" value="Vegetarian" onclick="return pizzaStyle(3);" /><a href="menu.html#veggie">Vegetarian Delight</a> - plus $3.00<br />
+			<input type="radio" name="rdoHouse" id="rdoVegan" value="Vegan Delight" onclick="return veganDelight();" /><a href="menu.html#vegan">Vegan Delight</a> - plus $4.00<br />
+			<input type="radio" name="rdoHouse" id="rdoOCanadian" value="Canadian" onclick="return pizzaStyle(2);" /><a href="menu.html#canadian">Super Canadian Bacon</a> - plus $2.00</p>
+			</div>
+		
+			<p><b>Comments</b><br />
+			<i>Use this box for 1 for 1's, subtractions, etc.</i></p>
+			<p><textarea name="comments" cols="40" rows="8"></textarea></p>
+
+		</td>
+		</tr>
+		</table>
+	</td>
+	<td width="30%">
+		<table>
+		<tr>
+		<td>
+			<p align="center"><b>Custom Toppings</b></p>
+			<p><u>Vegetarian</u><br />
+			<input type="checkbox" name="chkOlives" id="chkOlives" value="Olives" onclick="changeValue1(3);" />Olives<br />
+			<input type="checkbox" name="chkSpinach" id="chkSpinach" value="Spinach" onclick="changeValue1(4);" />Spinach<br />
+			<input type="checkbox" name="chkGarlic" id="chkGarlic" value="Garlic" onclick="changeValue1(5);" />Garlic<br />
+			<input type="checkbox" name="chkOnions" id="chkOnions" value="Onions" onclick="changeValue1(6);" />Onions<br />
+			<input type="checkbox" name="chkGreenPeppers" id="chkGreenPeppers" value="Green Peppers" onclick="changeValue1(7);" />Green Peppers<br />
+			<input type="checkbox" name="chkArtichokes" id="chkArtichokes" value="Artichokes" onclick="changeValue1(8);" />Artichokes<br />
+			<input type="checkbox" name="chkCapers" id="chkCapers" value="Capers" onclick="changeValue1(9);" />Capers<br />
+			<input type="checkbox" name="chkZuchinni" id="chkZuchinni" value="Zuchinni" onclick="changeValue1(10);" />Zuchinni<br />
+			<input type="checkbox" name="chkEggplant" id="chkEggplant" value="Eggplant" onclick="changeValue1(11);" />Eggplant<br />
+			<input type="checkbox" name="chkOlives" id="chkPineapple" value="Pineapple" onclick="changeValue1(12);" />Pineapple<br />
+			<input type="checkbox" name="chkMushrooms" id="chkMushrooms" value="Mushrooms" onclick="changeValue1(13);" />Mushrooms<br />
+			<input type="checkbox" name="chkTomatoes" id="chkTomatoes" value="Tomatoes" onclick="changeValue1(14);" />Tomatoes</p>
+	
+			<p><u>Meat &amp; Cheese</u><br />
+			<input type="checkbox" name="chkPepperoni" id="chkPepperoni" value="Pepperoni" onclick="changeValue1(15);" />Pepperoni<br />
+			<input type="checkbox" name="chkSausage" id="chkSausage" value="Sausage" onclick="changeValue1(16);" />Sausage<br />
+			<input type="checkbox" name="chkCanadianBacon" id="chkCanadianBacon" value="CanadianBacon" onclick="changeValue1(17);" />Canadian Bacon<br />
+			<input type="checkbox" name="chkSalumi" id="chkSalumi" value="Salumi" onclick="changeValue1(18);" />Salumi Coppa<br />
+			<input type="checkbox" name="chkProsciutto" id="chkProsciutto" value="Prosciutto" onclick="changeValue1(19);" />Prosciutto<br />
+			<input type="checkbox" name="chkChicken" id="chkChicken" value="Chicken" onclick="changeValue1(20);" />Chicken Sausage<br />
+			<input type="checkbox" name="chkAnchoves" id="chkAnchoves" value="Anchoves" onclick="changeValue1(21);" />Anchoves<br />
+			<input type="checkbox" name="chkClams" id="chkClams" value="Clams" onclick="changeValue1(22);" />Clams<br />
+			<input type="checkbox" name="chkShrimp" id="chkShrimp" value="Shrimp" onclick="changeValue1(23);" />Shrimp<br />
+			<input type="checkbox" name="chkFetaCheese" id="chkFetaCheese" value="Feta Cheese" onclick="changeValue1(24);" />Feta Cheese<br />
+			<input type="checkbox" name="chkExtraCheese" id="chkExtraCheese" value="Extra Cheese" onclick="changeValue1(25);" />Extra Cheese</p>
+		
+			<div id="vegan" style="visibility:visible">
+			<p><u>Vegan</u><br />
+			<input type="checkbox" name="chkVegan" id="chkVegan" value="Vegan Cheese" onclick="changeValue2(26);" />Vegan Cheese</p></div>
+		</td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+</td>
+<td>
+	<h3>Your Information</h3>
+	<table class="orderTable">
+	<tr>
+	<td>
+
+		<p>What kind of order is this?<br />
+		<input type="radio" name="rdoKind" id="rdoTakeOut" checked="checked" value="Take Out" onclick="return noDelivery();" />Take Out<br />
+		<input type="radio" name="rdoKind" id="rdoDineIn" value="Dine In" onclick="return noDelivery();" />Dine In<br />
+		<input type="radio" name="rdoKind" id="rdoDelivery" value="Delivery" onclick="return delivery();" />Delivery - plus $1.00</p>
+		<div id="deliveryAddress" style="visibility:hidden">
+		<p><input type="checkbox" name="chkDifferent" id="chkDifferent" value="Different" onclick="return delAddressVisibility();" /><i>Check here if you have a different billing and delivery address</i></p>
+		</div>
+		
+	
+		<p><b>Your Billing information</b></p>
+
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<table>
+	<colgroup width="200" />
+	<colgroup width="300" />
+	<tr>
+      <td>*First Name:</td>
+      <td><input type="text" size="20" name="txtFName" class="required" id="fName"/></td>
+   </tr>
+   <tr>
+      <td>*Last Name:</td>
+      <td><input type="text" size="20" name="txtLName" class="required" id="lName"/></td>
+   </tr>
+   <tr>
+      <td>*Address:</td>
+      <td><input type="text" size="20" name="txtAddress" class="required" id="address"/></td>
+   </tr>
+   <tr>
+      <td>Address 2: </td>
+      <td><input type="text" size="20" name="txtAddress2" class="required" id="address2"/></td>
+   </tr>
+   <tr>
+      <td>*City, State Zip:</td>
+      <td><input type="text" size="20" name="txtCity" class="required" id="city"/>   <input type="text" size="2" maxlength="2" name="txtState" class="required" id="state"/>   <input type="text" size="5" name="txtZip" class="required digits" id="Zip"/></td>
+   </tr>
+   <tr>
+      <td>*E-mail:</td>
+      <td><input type="text" size="20" name="txtEmail" id="email" class="required email" />
+      </td>
+      </tr>
+      <tr>
+      <td>*Phone Number:</td>
+      <td><input type="text" size="12" maxlength="12" name="txtPhone" class="required" id="phone"/> <i>format: xxx-xxx-xxxx</i>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      	*Select method of payment
+      </td>
+      <td>
+
+  			<select id="creditCard" class="required" >
+  				<option value=""></option>
+				<option value="Visa">Visa</option>
+				<option value="MasterCard">MasterCard</option>
+				<option value="AmericanExpress">American Express</option>
+				<option value="Dsicover">Discover</option>
+			</select>
+		</td>
+		</tr>
+		<tr>
+		<td>
+			*Card Number
+		</td>
+		<td>
+			<input type="text" size="16" maxlength="16" name="txtCardNumber" id="cardNumber" class="required creditcard" /><i>Format: no dashes</i>
+		</td>
+		</tr>
+		<tr>
+		<td>
+			*Exp. Date
+		</td>
+		<td>
+			<input type="text" size="2" maxlength="2" name="txtExpMonth" id="cardExpMonth" class="required digits" /> - <input type="text" size="4" maxlength="4" name="txtExpYear" id="ExpYear" class="required digits" />
+		</td>
+		</tr>
+		<tr>
+		<td>
+			*Security Code
+		</td>
+		<td>
+			<input type="text" size="4" maxlength="4" name="txtCardSecurity" id="cardSecurity"/>
+		</td>
+
+   </tr>
+   <tr>
+   
+   
+   <td>
+   <div id="deliveryAddressAa" style="visibility:hidden">
+   		<b>Delivery address</b>
+   		</div>
+   	</td>
+   	</tr>
+   	<tr>
+      <td>
+      	<div id="deliveryAddressAb" style="visibility:hidden">
+      	Address:
+      	</div>
+      </td>
+      <td>
+      	<div id="deliveryAddressAc" style="visibility:hidden">
+      	<input type="text" size="20" name="txtAddressD" id="addressD"/>
+      	</div>
+     </td>
+   </tr>
+   <tr>
+     <td>
+     	<div id="deliveryAddressAd" style="visibility:hidden">
+    	 Address 2: 
+    	 </div>
+    </td>
+     <td>
+     	<div id="deliveryAddressAe" style="visibility:hidden">
+     	<input type="text" size="20" name="txtAddress2D" id="address2D"/>
+     	</div>
+     </td>
+   </tr>
+   <tr>
+   <td>
+   	<div id="deliveryAddressAf" style="visibility:hidden">
+   	City, State Zip (read-only):
+   	</div>
+   </td>
+   <td>
+   	<div id="deliveryAddressAg" style="visibility:hidden">
+   	<input type="text" size="20" name="txtCityD" readonly="readonly" id="cityd" value="Seattle"/>   <input type="text" size="2" maxlength="2" name="txtStated" id="stateD" readonly="readonly" value="WA"/> 
+      <select name="zipCode">
+		<option value="98107">98107</option>
+		<option value="98117">98117</option>
+		<option value="98103">98103</option>
+		<option value="98199">98199</option>
+		<option value="98119">98119</option>
+		<option value="98109">98109</option>
+		</select>
+		</div>
+      </td>
+   		</tr>
+		<tr>
+      <td>
+      <p>* = Required </p>
+      </td>
+      </tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+	<div class="offset">
+	<h3>Your total</h3>
+	</div>
+	<table class="totalTable">
+	<colgroup width="150" />
+	<colgroup width="150" />
+	<tr>
+	<td>
+		Subtotal:
+	</td>
+    <td><input type="text" size="6" name="txtSubtotal" id="subtotal" readonly="readonly"/></td>
+    </tr>
+    <tr>
+    <td>Sales Tax:</td>
+      <td><input type="text" size="6" name="txtSalestax" id="salestax" readonly="readonly"/></td>
+   </tr>
+	<tr>
+    <td>Total:</td>
+      <td><input type="text" size="6" name="txtTotal" id="total" readonly="readonly"/></td>
+      </tr>
+      <tr>
+      <td>
+      	<input type="submit" name="btnSubmit" id="submit" value="Place Your Order"/>
+      </td>
+      </tr>
+      </table>
+      </form>
+      <div class="offset">
+      <p><a href="welcome.html">Main page</a><br />
+		<a href="menu.html">Menu</a></p>
+	</div>
+	
+<hr />
+<p>Important Notice:  This business and the associated web pages constitutes a project for my JavaScript class and is purely fictional.  
+Any resemblance to an actual business is coincidental and unintentional. All material used used for this project falls under the Fair Use Doctorine for educational and research purposes.  Please do not disclose actual financial information on this site.
+For more detailed information, please visit the <a href="disclosure.html">disclosure</a> page.</p>
+
+	<p>&copy; 2011 Jeremy R Perry.  All rights reserved.<br />
+	E mail me:  <a href="mailto:jeremyrperry@gmail.com">jeremyrperry@gmail.com</a></p>
+    	<p><a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-xhtml10"
+        alt="Valid XHTML 1.0 Transitional" title="Learn more about W3C standards" height="31" width="88" border="0" /></a>
+  	</p>
+
+
+</body>
+</html>

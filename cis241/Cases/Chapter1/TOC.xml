@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<reference>
+	<manual>
+		<name>How to use inDesign</name>
+		<author>John Doe</author>
+	</manual>
+	<chapter>
+		<number>1</number>
+		<name>Title</name>
+		<summary>Summary of the Chapter</summary>
+		<section_1>Description of Section 1</section_1>
+		<section_2>Description of Section 2</section_2>
+		<section_3>Description of Section 3</section_3>
+		<section_4>Description of Section 4</section_4>
+	</chapter>
+	<chapter>
+		<number>2</number>
+		<name>Title</name>
+		<summary>Summary of the Chapter</summary>
+		<section_1>Description of Section 1</section_1>
+		<section_2>Description of Section 2</section_2>
+		<section_3>Description of Section 3</section_3>
+		<section_4>Description of Section 4</section_4>
+	</chapter>
+	<chapter>
+		<number>3</number>
+		<name>Title</name>
+		<summary>Summary of the Chapter</summary>
+		<section_1>Description of Section 1</section_1>
+		<section_2>Description of Section 2</section_2>
+		<section_3>Description of Section 3</section_3>
+		<section_4>Description of Section 4</section_4>
+	</chapter>
+	<chapter>
+		<number>4</number>
+		<name>Title</name>
+		<summary>Summary of the Chapter</summary>
+		<section_1>Description of Section 1</section_1>
+		<section_2>Description of Section 2</section_2>
+		<section_3>Description of Section 3</section_3>
+		<section_4>Description of Section 4</section_4>
+	</chapter>
+	<chapter>
+		<number>5</number>
+		<name>Title</name>
+		<summary>Summary of the Chapter</summary>
+		<section_1>Description of Section 1</section_1>
+		<section_2>Description of Section 2</section_2>
+		<section_3>Description of Section 3</section_3>
+		<section_4>Description of Section 4</section_4>
+	</chapter>
+</reference>

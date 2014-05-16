@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*
+There shouldn't be any logical reason as to why I need to make a conditional browser stylesheet, but Internet Explorer is retarded.  We all know that.  It is also unfair to penalize other browsers for this retardation.  The header is given a standard color since Internet Explorer can't read the color gradient setup in the main browser, like every other major browser can.  I should have made this color yellow, like the color of the short bus that Internet Explorer would take to school if it were a school child.*/
+
+#header
+{
+	background-color: rgb(134, 144, 55);
+}

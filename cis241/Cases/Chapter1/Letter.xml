@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<business_letter>
+	<cover_art filename="keyboard.jpg"/>
+	<company_name>ABC Corporation</company_name>
+	<address>123 Main St </address>
+	<city>Anytown</city>
+	<state>WA</state>
+	 <zip>99999</zip>
+	<from>
+		<sender_name>John Doe</sender_name>
+		<sender_title>CEO</sender_title>
+	</from>
+	<to>
+		<recipient_name>Jane Doe</recipient_name>
+		<recipient_title>President</recipient_title>
+		<company>XYZ Company</company>
+		<address>456 Broadway</address>
+		<city>Anothertown</city>
+		<state>WA</state>
+		<zip>99998</zip>
+	</to>
+	<salutation>Dear Ms. Doe:</salutation>
+	<body></body>
+</business_letter>

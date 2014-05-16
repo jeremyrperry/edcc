@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Chapter 3 Demonstration</title>
+    <!-- author: Jeremy Perry
+     CIS 246, Spring 2012 -->
+    <meta name="author" content="Jeremy Perry" />
+    <meta name="keywords" content="CIS 246 jQuery Example" />
+    <meta name="description" content="A CIS 246 demonstration of jQuery using both hover and click for showing and hiding ID/Class elements." />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="none" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+var currentId = "";
+var newId = "";
+var show = false;
+
+$(document).ready(function(){
+
+$('.image').hover(function() {
+	
+        newId = $(this).attr('id');
+		if(newId != currentId)
+		{
+			newId = newId.replace("image", "description");
+			newId = "#" + newId;
+			$(newId).show();
+			currentId = newId;
+		}
+});
+
+$('.image').mouseout(function() {
+		if(!show)
+		{
+		$(currentId).hide();
+		currentId = "";	
+		}
+});
+
+$('.image').click(function() {
+		if(show)
+		{
+		$(currentId).hide();
+		currentId = "";
+		show = false;	
+		}
+		else
+		{
+        newId = $(this).attr('id');
+		newId = newId.replace("image", "description");
+		newId = "#" + newId;
+		$(newId).show();
+		currentId = newId;
+		show = true;
+		}
+});	
+	
+});
+</script>
+<style type="text/css">
+.description
+{
+	display:none;
+}
+</style>
+</head>
+
+<body>
+<p><a class="image" id="image_1" href="#"><img src="images/image1.jpg" alt="Image 1" title="click on me to see a description of the picture" /></a></p>
+<div class="description" id="description_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate</div>
+
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr">
+
+
+<head>
+<title>My first JavaScript Calculator</title>
+<!-- Name:  Jeremy Perry -->
+<!-- Class:  CIS 242 Winter 2011 -->
+<!-- Assignment:  Project 1 -->
+<!-- Date: 01/10/2011 -->
+       <meta name="author" content="Jeremy Perry" />
+       <meta name="keywords" content=", Jeremy Perry, calculator, Javascript, CIS 242, class example, Winter 2011, Edmonds Community College" />
+       <meta name="description" content="Jeremy Perry's CIS 241 resume page" />
+       <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+       <meta name="robots" content="none" /> 
+<script type="text/javascript">	
+	var myCalculation = "";
+
+	function AddValue(txt)
+		{
+			myCalculation = myCalculation + txt;
+			document.formCalculator.txtCalculator.value = myCalculation;
+		}
+		
+	function Total()
+		{
+			myCalculation = eval(document.formCalculator.txtCalculator.value)
+			document.formCalculator.txtCalculator.value = myCalculation;
+		}
+	
+	function ClearAll()
+		{
+			myCalculation = "";
+			document.formCalculator.txtCalculator.value = "";
+		}
+</script>
+</head>
+
+<body>
+<h1 align="center">My first JavaScript Calculator</h1>
+<table border="1" align="center">
+	<tr>
+	<td align="center">
+	<form action="" name="formCalculator">
+	<p><input type="text" name="txtCalculator" size="30" maxlength="50" /></p>
+			<p><input type="button" value=" 7 " name="button7"
+				onclick="AddValue('7')" />
+			<input type="button" value=" 8 " name="button8"
+				onclick="AddValue('8')" />
+			<input type="button" value=" 9 " name="button9"
+				onclick="AddValue('9')" />
+			<input type="button" value=" * " name="buttonMultiply"
+				onclick="AddValue('*')" /></p>
+		
+			<p><input type="button" value=" 4 " name="button4"
+				onclick="AddValue('4')" />
+			<input type="button" value=" 5 " name="button5"
+				onclick="AddValue('5')" />
+			<input type="button" value=" 6 " name="button6"
+				onclick="AddValue('6')" />
+			<input type="button" value=" / " name="buttonDivide"
+				onclick="AddValue('/')" /></p>
+		
+		
+			<p><input type="button" value=" 1 " name="button1"
+				onclick="AddValue('1')" />
+			<input type="button" value=" 2 " name="button2"
+				onclick="AddValue('2')" />
+			<input type="button" value=" 3 " name="button3"
+				onclick="AddValue('3')" />
+			<input type="button" value=" + " name="buttonPlus"
+				onclick="AddValue('+')" /></p>
+
+			<p><input type="button" value=" 0 " name="button0"
+				onclick="AddValue('0')" />
+			<input type="button" value=" . " name="buttonPeriod"
+				onclick="AddValue('.')" />
+			<input type="button" value=" % " name="buttonPercent"
+				onclick="AddValue('%')" />
+			<input type="button" value=" - " name="buttonMinus"
+				onclick="AddValue('-')" /></p>	
+
+
+			<p><input type="button" value=" ( " name="buttonFirstPar"
+				onclick="AddValue('(')" />
+			<input type="button" value=" ) " name="buttonLastPar"
+				onclick="AddValue(')')" />
+			<input type="button" value=" = " name="buttonEquals"
+				onclick="Total()" />
+			<input type="button" value="Clear" name="buttonClear"
+				onclick="ClearAll()" /></p>
+	</form>
+	</td>
+	</tr>
+	</table>
+<p align="center"><a href="../cis242.php">Back to my JavaScript class page</a><p>
+
+
+</body>
+</html>

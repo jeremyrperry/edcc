@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr">
+
+
+<head>
+<title>Wholesome Pizza:  Important Dislosure</title>
+<!-- Name:  Jeremy Perry -->
+<!-- Class:  CIS 242 Winter 2011 -->
+<!-- Assignment:  JavaScript Final -->
+<!-- Date: 01/10/2011 -->
+       <meta name="author" content="Jeremy Perry" />
+       <meta name="keywords" content=", Jeremy Perry, calculator, Javascript, CIS 242, class example, Winter 2011, Edmonds Community College" />
+       <meta name="description" content="Jeremy Perry's CIS 242 JavaScript calculator" />
+       <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+       <meta name="robots" content="none" />
+<link rel="stylesheet" href="CSS/WP_style.css" type="text/css" />
+
+<script type="text/javascript" src="javascript/jquery.js"></script>
+<script type="text/javascript" src="javascript/cookie.js"></script>
+<script type="text/javascript" src="javascript/orderinfo.js"></script>
+<script type="text/javascript">
+
+
+//This function is called upon when the user selects either the yes or no radio button
+function confirmAgreement(txt)
+{	
+	if (txt == "yes")
+	{
+		$('div.showInfoNo').hide();
+		$('div.showInfoYes').show();
+	}
+	else
+	{
+		$('div.showInfoYes').hide();
+		$('div.showInfoNo').show();
+	}
+}
+
+//This function is called upon when the page loads.  It will hide both div elements and remind the user to enable their cookies if they have them
+//disabled.
+function loadPage()
+{
+	$('div.showInfoYes').hide();
+	$('div.showInfoNo').hide();
+	if(!navigator.cookieEnabled)
+    {
+    	alert("You will need to enable cookies for this site to work.");
+    }
+}
+
+//This function is called uon when the user selects the place order button.  Will return a false if cookies are not enabled.
+//If cookies are enabled, the agreement cookie is set and the user is permitted to go to the order page.
+//The agree cookie is set to where the disclosure page doesn't have to be visited again.
+function addAgreeCookie()
+{
+	if(!navigator.cookieEnabled)
+    {
+    	alert("You will need to enable cookies before proceeding.");
+    	return false;
+    }
+	SetCookie("agreeCookie", "yes");
+	return true;
+}
+
+</script>
+</head>
+
+<body onload="loadPage();">
+
+<table width="100%">
+<colgroup width="33%" />
+<colgroup width="33%" />
+<colgroup width="33%" />
+<tr>
+<td align="left">
+	<img src="pictures/organic.jpg" alt="organic" height="100" width="100" />
+</td>
+<td align="center">
+	<p align="center"><img src="pictures/logo.jpg" alt="logo" /><br />
+	2230 NW Market Street<br />
+	Seattle, WA  98107<br />
+	206-234-5678<br />
+	<a href="mailto:info@wholesomepizza.com">info@wholesomepizza.com</a><br />
+	Hours:  11 AM to 11 PM everyday</p>
+</td>
+<td align="right">
+	<img src="pictures/fairtrade.jpg" alt="fair trade" height="100" width="100" />
+</td>
+</tr>
+
+</table>
+
+	<p align="center"><font size="24"><i>Seattle's Premier Organic Pizza Experience</i></font></p>
+
+<table class="pizzaBackground">
+<tr>
+<td valign="top">
+	<h2>Important Disclosure:  Read it and accept it</h2>
+	<p>This website and the business it represents constitutes a project for my JavaScript class and is purely fictional.  Any resemblence to an actual business is coincidental and unintentional.  
+	This site was developed using using materials derived from the internet and in a manner consistent with the Fair Use Doctorine for educational and research purposes.</p>
+	
+	<p>This site is only intended to simulate using a credit/debit card in the ordering process.  It does not have the capability 
+	of verfiying an actual credit/debit card number for a transaction, or storing any data.  Despite this, if you enter in actual credit/debit card number or any
+	sensitive information, this is an unsecure site and it is possible for a thrid party to view it.</p>
+	 
+	 <h3><u>DO NOT use an actual credit/debit card number, nor give any other sensitive information!!!</u></h3>
+	 
+	 <p>This site is designed to where any generic credit/debit card number will work.  Below is the syntax for entering in credit card information</p>
+	 
+	 <ul>
+	 	<li>Choose the credit/debit card of your choice</li>
+	 	<li>If you choose Visa, enter in 4 as your first digit, and then 15 other numbers of your choosing.</li>
+	 	<li>If you choose MasterCard, enter in 5 as your first digit, and then 15 other numbers of your choosing.</li>
+	 	<li>If you choose American Express, enter in 3 as your first digit, and then 14 other numbers of your choosing.</li>
+	 	<li>If you choose Discover, enter in 6011 as your first four digits, and then 12 other numbers of your choosing.</li>
+	 	<li>Enter an expiration date that is either this month or later.</li>
+	 	<li>For a security code, enter in a three digit number for Visa, MasterCard, or Discover.  Enter in a four digit number for American Express.</li>
+	 </ul>
+	 
+	<p>Lastly, I will need you to agree to the following:</p>
+	<ol>
+		<li>That you are aware this site represents a purely fictional business.</li>
+		<li>That you will not disclose any actual credit/debit card or other sensitive information on this site.</li>
+		<li>I can't be held liabile if you choose to ignore my warning about not using actual credit/debit card or other sensitive information.</li>
+	</ol>
+	<form action="order.html" onsubmit="addAgreeCookie();">
+		<p><input type="radio" name="rdoConfirm" id="rdoYes" value="I agree" onclick="return confirmAgreement('yes');" />Agree<br />
+		<input type="radio" name="rdoConfirm" id="rdoNo" value="I don't agree" onclick="return confirmAgreement('no');" />Don't agree</p>
+		<div class="showInfoYes"><p><input type="submit" name="btnSubmit" id="submit" value="Place Order" />By clicking this button, you are agreeing to the disclosures, terms and conditons lsited on this page.</p></div>
+		<div class="showInfoNo"><p>Sorry, I can't let you go to the order page unless you agree.</p></div>
+		<p><a href="welcome.html">Main page</a><br />
+		<a href="menu.html">Menu</a></p>
+	</form>
+</td>
+</tr>
+</table>
+
+
+
+<hr />
+<p>Important Notice:  This business and the associated web pages constitutes a project for my JavaScript class and is purely fictional.  
+Any resemblance to an actual business is coincidental and unintentional. All material used used for this project falls under the Fair Use Doctorine for educational and research purposes.  Please do not disclose actual financial information on this site.</p>
+	<p>&copy; 2011 Jeremy R Perry.  All rights reserved.<br />
+	E mail me:  <a href="mailto:jeremyrperry@gmail.com">jeremyrperry@gmail.com</a></p>
+    	<p><a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-xhtml10"
+        alt="Valid XHTML 1.0 Transitional" title="Learn more about W3C standards" height="31" width="88" border="0" /></a>
+  	</p>
+
+
+</body>
+</html>
