@@ -1,12 +1,12 @@
 <?php
 
 //The MySQL connection used for the entire website
-$con = mysql_connect("phpprojectjrp.db.7368935.hostedresource.com","phpprojectjrp","Jrp1234!");
+$con = mysql_connect("host","username","password");
 if (!$con)
 {
 die('Could not connect: ' . mysql_error());
 }
 
-mysql_select_db("phpprojectjrp", $con);
+mysql_select_db("dbname", $con);
 
 ?>
